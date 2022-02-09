@@ -5,6 +5,7 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/colorPrimaryLight</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/colorAccent</item>
 
         <!-- Secondary brand color. -->
 
