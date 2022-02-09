@@ -2,17 +2,31 @@ package com.example.messenger
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-//import com.example.messenger.databinding.ActivityMainBinding
+import androidx.appcompat.widget.Toolbar
+import com.example.messenger.databinding.ActivityMainBinding
+import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
+import com.mikepenz.materialdrawer.widget.AccountHeaderView
 
 class MainActivity : AppCompatActivity() {
 
-    // пробуем связку viewBinding
-    // mBinding общий член класса Binding
-    // На котлине так никто не делает, но на джаве так
-//    private lateinit var mBinding: ActivityMainBinding
+    private lateinit var mBinding: ActivityMainBinding
+    private lateinit var mDrawer: PrimaryDrawerItem
+    private lateinit var mHeader: AccountHeaderView
+    private lateinit var mToolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        mBinding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(mBinding.root)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        initFieleds()
+    }
+
+
+    private fun initFieleds() {
+        mToolbar = mBinding.mainToolbar
     }
 }
