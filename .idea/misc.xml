@@ -4,9 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Valera/AndroidStudioProjects/Messenger/app/src/main/res/drawable/header.xml" value="0.238" />
-        <entry key="..\:/Users/Valera/AndroidStudioProjects/Messenger/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Valera/AndroidStudioProjects/Messenger/app/src/main/res/drawable/ic_attach.xml" value="0.1" />
+        <entry key="..\:/Users/Valera/AndroidStudioProjects/Messenger/app/src/main/res/drawable/ic_choice.xml" value="0.1" />
+        <entry key="..\:/Users/Valera/AndroidStudioProjects/Messenger/app/src/main/res/drawable/ripple_effect.xml" value="0.2225" />
+        <entry key="..\:/Users/Valera/AndroidStudioProjects/Messenger/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Valera/AndroidStudioProjects/Messenger/app/src/main/res/layout/fragment_chats.xml" value="0.25" />
-        <entry key="..\:/Users/Valera/AndroidStudioProjects/Messenger/app/src/main/res/layout/fragment_settings.xml" value="0.2749094202898551" />
+        <entry key="..\:/Users/Valera/AndroidStudioProjects/Messenger/app/src/main/res/layout/fragment_settings.xml" value="0.359375" />
       </map>
     </option>
   </component>

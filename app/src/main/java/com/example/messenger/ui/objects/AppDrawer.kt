@@ -1,12 +1,10 @@
 package com.example.messenger.ui.objects
 
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.messenger.R
 import com.example.messenger.ui.fragments.SettingsFragment
-import com.mikepenz.iconics.Iconics.applicationContext
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
 import com.mikepenz.materialdrawer.Drawer
@@ -91,8 +89,6 @@ class AppDrawer(val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
                             .addToBackStack(null)
                             .replace(R.id.dataContainer, SettingsFragment()).commit()
                     }
-                    Toast.makeText(applicationContext, position.toString(), Toast.LENGTH_SHORT)
-                        .show()
                     return false
                 }
             }).build()
@@ -104,8 +100,8 @@ class AppDrawer(val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
             .withActivity(mainActivity)
             .withHeaderBackground(R.drawable.header)
             .addProfiles(
-                ProfileDrawerItem().withName("Valera Makhnovich")
-                    .withEmail("+7-989-716-71-02")
+                ProfileDrawerItem().withName("Валера Махнович")
+                    .withEmail("+7 (989) 716–71–02")
             ).build()
     }
 

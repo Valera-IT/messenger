@@ -3,8 +3,8 @@
 
     <color name="colorPrimaryLight">#0088CC</color>
     <color name="colorPrimaryDark">#3300B3</color>
-    <color name="colorAccent">@color/material_drawer_background</color>
-    <color name="colorAccentDark">@color/material_drawer_dark_background</color>
+    <color name="colorAccent">@color/material_drawer_header_selection_text</color>
+    <color name="colorAccentDark">@color/material_drawer_header_selection_subtext</color>
 
     <!-- Material DEFAULT colors -->
     <color name="material_drawer_primary">#2196F3</color>
@@ -26,7 +26,7 @@
     <color name="material_drawer_selected_legacy">#E8E8E8</color>
     <color name="material_drawer_selected_text">#2196F3</color>
     <color name="material_drawer_header_selection_text">#FFFFFF</color>
-    <color name="material_drawer_header_selection_subtext">#999999</color>
+    <color name="material_drawer_header_selection_subtext">#CCCCCC</color>
 
     <!-- OVERWRITE THESE COLORS FOR A DARK THEME -->
     <!-- MaterialDrawer DEFAULT DARK colors -->
