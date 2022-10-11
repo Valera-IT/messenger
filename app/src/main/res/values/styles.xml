@@ -40,7 +40,19 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">?attr/actionBarSize</item>
         <item name="android:background">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
         <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+    </style>
+
+    <style name="editText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/horizontal_margin</item>
+        <item name="android:inputType">phone</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:padding">@dimen/appPadding</item>
+        <item name="android:textColor">@color/colorAccentDark</item>
+        <item name="android:textSize">@dimen/normal_text</item>
     </style>
 
 </resources>
