@@ -1,9 +1,9 @@
 package com.example.messenger.ui.fragments
 
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.messenger.R
 import com.example.messenger.utilits.AppTextWatcher
+import com.example.messenger.utilits.showToast
 import kotlinx.android.synthetic.main.fragment_enter_code.*
 
 
@@ -21,6 +21,6 @@ class EnterCodeFragment : Fragment(R.layout.fragment_enter_code) {
     }
 
     fun verifiCode() {
-        Toast.makeText(activity, "OK", Toast.LENGTH_SHORT).show()
+        showToast("OK")
     }
 }
