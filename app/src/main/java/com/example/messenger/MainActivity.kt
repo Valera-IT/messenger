@@ -7,8 +7,10 @@ import com.example.messenger.activities.RegisterActivity
 import com.example.messenger.databinding.ActivityMainBinding
 import com.example.messenger.ui.fragments.ChatsFragment
 import com.example.messenger.ui.objects.AppDrawer
+import com.example.messenger.utilits.AUTH
 import com.example.messenger.utilits.replaceActivity
 import com.example.messenger.utilits.replaceFragment
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,10 +31,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        if (true) {
+        if (AUTH.currentUser!=null) {
             setSupportActionBar(mToolbar)
             mAppDrawer.create()
-            replaceFragment(ChatsFragment())
+            replaceFragment(ChatsFragment(),false)
         } else {
             replaceActivity(RegisterActivity())
         }
@@ -42,5 +44,6 @@ class MainActivity : AppCompatActivity() {
     private fun initFields() {
         mToolbar = mBinding.mainToolbar
         mAppDrawer = AppDrawer(this, mToolbar)
+        AUTH = FirebaseAuth.getInstance()
     }
 }
