@@ -12,7 +12,12 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
         setHasOptionsMenu(true)
     }
 
+    @Deprecated("Deprecated in Java", ReplaceWith(
+        "activity?.menuInflater?.inflate(R.menu.settings_action_menu, menu)",
+        "com.example.messenger.R"
+    )
+    )
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        activity?.menuInflater?.inflate(R.menu.settings_action_menu,menu)
+        activity?.menuInflater?.inflate(R.menu.settings_action_menu, menu)
     }
 }
