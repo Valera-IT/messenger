@@ -1,6 +1,7 @@
 package com.example.messenger.ui.fragments
 
 import androidx.fragment.app.Fragment
+
 import com.example.messenger.MainActivity
 import com.example.messenger.R
 import com.example.messenger.activities.RegisterActivity
@@ -22,8 +23,11 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
 
     override fun onStart() {
         super.onStart()
+        /* Callback который возвращает результат верификации */
         mCallBack = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
+                /* Функция срабатывает если верификация уже была произведена
+                * Пользователь авторизируется в приложении без потверждения по смс */
                 AUTH.signInWithCredential(credential).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         showToast("Добро пожаловать")
@@ -33,10 +37,12 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
             }
 
             override fun onVerificationFailed(p0: FirebaseException) {
+                /* Функция срабатывает если верификация не удалась*/
                 showToast(p0.message.toString())
             }
 
             override fun onCodeSent(id: String, token: PhoneAuthProvider.ForceResendingToken) {
+                /* Функция срабатывает если верификация впервые, и отправлена смс */
                 replaceFragment(EnterCodeFragment(mPhoneNumber, id))
             }
         }
@@ -44,6 +50,8 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
     }
 
     private fun sendCode() {
+        /* Функция проверяет поле для ввода номер телефона, если поле пустое выводит сообщение.
+        * Если поле не пустое, то начинает процедуру авторизации/ регистрации */
         if (register_input_phone_number.text.toString().isEmpty()) {
             showToast(getString(R.string.register_toast_enter_phone))
         } else {
@@ -52,6 +60,7 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
     }
 
     private fun authUser() {
+        /* Инициализация юзера*/
         mPhoneNumber = register_input_phone_number.text.toString()
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
             mPhoneNumber,
@@ -60,5 +69,17 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
             activity as RegisterActivity,
             mCallBack
         )
+        /* Предыдущая функция устарела
+        * Хотя добавил капчу в билдгредл, есть проблема с прохождением капчи на виртуальных телефонах
+        * Возможное решение*/
+//        PhoneAuthProvider.verifyPhoneNumber(
+//                PhoneAuthOptions
+//                .newBuilder(FirebaseAuth.getInstance())
+//                .setActivity(activity as RegisterActivity)
+//                .setPhoneNumber(mPhoneNumber)
+//                .setTimeout(60L, TimeUnit.SECONDS)
+//                .setCallbacks(mCallback)
+//                .build()
+//        )
     }
 }

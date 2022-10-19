@@ -12,6 +12,7 @@ import com.google.firebase.auth.PhoneAuthProvider
 import kotlinx.android.synthetic.main.fragment_enter_code.*
 
 
+/* Фрагмент для ввода кода подтверждения при регистрации */
 class EnterCodeFragment(val phoneNumber: String, val id: String) :
     Fragment(R.layout.fragment_enter_code) {
     override fun onStart() {
@@ -26,6 +27,8 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) :
     }
 
     private fun enterCode() {
+        /* Функция проверяет код
+         если всё нормально, создает информацию о пользователе в базе данных.*/
         val code = register_input_code.text.toString()
         val credential = PhoneAuthProvider.getCredential(id, code)
         AUTH.signInWithCredential(credential).addOnCompleteListener { task ->
